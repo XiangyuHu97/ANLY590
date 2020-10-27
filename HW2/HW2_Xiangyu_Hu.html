@@ -13076,7 +13076,7 @@ div#notebook {
 
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -13134,11 +13134,11 @@ $$h1 = f(w_{11} x_1 + w_{21} x_2 + b_1) = max(0, w_{11} x_1 + w_{21} x_2 + b_1)$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[87]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ff_nn_Relu</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">b</span><span class="p">):</span>
-    <span class="n">z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">z</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="n">b</span>
     <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">relu</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>    
 </pre></div>
 
@@ -13149,7 +13149,7 @@ $$h1 = f(w_{11} x_1 + w_{21} x_2 + b_1) = max(0, w_{11} x_1 + w_{21} x_2 + b_1)$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[103]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ff_nn_out</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">c</span><span class="p">):</span>
@@ -13171,7 +13171,7 @@ $$h1 = f(w_{11} x_1 + w_{21} x_2 + b_1) = max(0, w_{11} x_1 + w_{21} x_2 + b_1)$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[216]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="o">-</span><span class="mf">1.0</span><span class="p">,</span><span class="mf">1.0</span><span class="p">]])</span>
@@ -13188,7 +13188,7 @@ $$h1 = f(w_{11} x_1 + w_{21} x_2 + b_1) = max(0, w_{11} x_1 + w_{21} x_2 + b_1)$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[102]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">ff_nn_out</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">w</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
@@ -13204,13 +13204,13 @@ $$h1 = f(w_{11} x_1 + w_{21} x_2 + b_1) = max(0, w_{11} x_1 + w_{21} x_2 + b_1)$
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[102]:</div>
+    <div class="prompt output_prompt">Out[14]:</div>
 
 
 
 
 <div class="output_text output_subarea output_execute_result">
-<pre>&lt;tf.Tensor: shape=(1, 3), dtype=float64, numpy=array([[0.88079708, 0.73105858, 0.81757448]])&gt;</pre>
+<pre>&lt;tf.Tensor: shape=(1, 3), dtype=float64, numpy=array([[0.81757448, 0.62245933, 0.62245933]])&gt;</pre>
 </div>
 
 </div>
@@ -13221,10 +13221,10 @@ $$h1 = f(w_{11} x_1 + w_{21} x_2 + b_1) = max(0, w_{11} x_1 + w_{21} x_2 + b_1)$
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[104]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## the probabilities of each sample is 0.88, 0.73, 0.82.</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">## the probabilities of each sample is 0.82, 0.62, 0.62.</span>
 </pre></div>
 
     </div>
